@@ -6,11 +6,11 @@
  */
 
 $host = "localhost";
-$user = "root";
+$username = "root";
 $password = "Ilovetea24!";
 $dbname = "test";
 $dsn = "mysql:host=$host;dbname=$dbname"; // will use later
 $options = array(
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-); ?>
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+);
 
