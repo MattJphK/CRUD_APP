@@ -9,25 +9,19 @@
 
 require "config.php";
 //the require statement isn't working so I'm adding it in directly
-$host = "localhost";
-$username = "root";
-$password = "Ilovetea24!";
-$dbname = "test";
-$dsn = "mysql:host=$host;dbname=$dbname"; // will use later
-$options = array(
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-);
-$sql = "";
+
+$sql = '';
 try {
 
-    $connection = new PDO("mysql:host=$host;dbname=$dbname", $username,
-        $password,$options);
+    $connection = new PDO("mysql:host=$host", $username, $password, $options);
     $sql = file_get_contents("init.sql");
     $connection->exec($sql);
+    $connection = new PDO("mysql:host=$host;dbname=$dbname", $username,
+        $password,$options);
 
     echo "Database and table users created successfully";
 }
 catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
- ?>
+?>
