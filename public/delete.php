@@ -39,7 +39,6 @@ try {
         <th>Age</th>
         <th>Location</th>
         <th>Date</th>
-        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -51,7 +50,6 @@ try {
             <td><?php echo escape($row["email"]); ?></td>
             <td><?php echo escape($row["age"]); ?></td>
             <td><?php echo escape($row["location"]); ?></td>
-            <td><?php echo escape($row["date"]); ?> </td>
             <td><a href="delete.php?id=<?php echo escape($row["id"]);
                 ?>">Delete</a></td>
         </tr>
